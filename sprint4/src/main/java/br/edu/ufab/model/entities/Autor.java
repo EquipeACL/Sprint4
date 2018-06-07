@@ -2,6 +2,7 @@ package br.edu.ufab.model.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 /**
@@ -17,7 +18,7 @@ import javax.validation.constraints.NotBlank;
 public class Autor {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@NotBlank(message=" Nome do autor é obrigatório")

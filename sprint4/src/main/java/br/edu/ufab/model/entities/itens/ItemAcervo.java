@@ -1,6 +1,7 @@
 package br.edu.ufab.model.entities.itens;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -18,7 +19,7 @@ import javax.validation.constraints.NotBlank;
 public abstract class ItemAcervo {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@NotBlank(message=" Titulo é obrigatório")

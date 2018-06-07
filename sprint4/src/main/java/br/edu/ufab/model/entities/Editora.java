@@ -2,9 +2,9 @@ package br.edu.ufab.model.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 /**
  * Classe que representa uma view dos dados de autor. Como estamos
  * usando hibernate, a classe Editora � uma entidade e  seus atributos ser�o os campos
@@ -18,7 +18,7 @@ import javax.validation.constraints.NotNull;
 public class Editora {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private long id;
 	
 	@NotBlank(message=" Nome da editora é obrigatório")
